@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>My Webpage</title>
+</head>
+
+<body>
+    <div class="card1"><img src=" profile.jpg " alt="chiomaloveth " data-testid="slackDisplayImage ">
+        <div class="card2">
+            <h4 id=" SlackUsernameName ">@Chioma Loveth</h4>
+        </div>
+        <h3>
+            <p>
+                <div id="currentDayOfTheWeek">Today is:</div>
+            </p>
+            <p>
+                <div id="currentUTCTime">currentUTCTime:
+                </div>
+            </p>
+            <p></p>
+            <div id="myTrack">My Track: Frontend</div>
+            </p>
+    </div>
+    </h3><a href="https://github.com/chiomalovet/YourRepositoryName" data-testid="githubURL">GitHub Repository</a>
+
+    <script>
+        // Create an array of weekday names
+        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // Get the current date and extract the day of the week (0 to 6)
+        const currentDayIndex = new Date().getDay();
+
+        // Get the day name using the currentDayIndex
+        const currentDay = daysOfWeek[currentDayIndex];
+
+        // Update the placeholder with the current day
+        document.querySelector('[id="currentDayOfTheWeek"]').textContent += currentDay;
+
+        function formatTime(date) {
+            const hours = String(date.getUTCHours()).padStart(2, '0');
+            const minutes = String(date.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(date.getUTCSeconds()).padStart(2, '0');
+            return `${hours}:${minutes}:${seconds}`;
+        }
+        const currentUTC = new Date().toUTCString();
+        document.querySelector('[id="currentUTCTime"]').textContent += formatTime(new Date(currentUTC));
+    </script>
+</body>
+
+</html>
