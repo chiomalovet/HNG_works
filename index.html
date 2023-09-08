@@ -2,96 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="style.css"> -->
-    <script src="script.js"></script>
-    <title>My Webpage</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task1</title>
 </head>
-<style>
-    body {
-        background-color: black;
-        background-position: center;
-        background-size: cover;
-        position: relative;
-        text-align: left;
-        font-size: 24px;
-    }
-    
-    img {
-        width: 100px;
-        height: 100px;
-        align-content: right;
-        margin-left: 160px;
-        margin-bottom: 0%;
-        border-radius: 50px;
-    }
-    
-    .card1 {
-        width: 300px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        background-color: #1f10f0;
-        margin-left: 500px;
-        text-align: center;
-        height: 400px;
-        margin-top: 20px
-    }
-    
-    h4 {
-        text-align: left;
-        margin-top: -100px;
-        margin-bottom: 100px;
-        margin-left: -10px;
-    }
-    
-    h3 {
-        text-align: left;
-    }
-</style>
+
 <body>
-    <div class="card1"><img src=" profile.jpg " alt="chiomaloveth " data-testid="slackDisplayImage ">
-        <div class="card2">
-            <h4 id=" SlackUsernameName ">@Chioma Loveth</h4>
+    <section>
+        <div class="card">
+            <div class="image-container">
+                <img src="profile.jpg" data-testid="slackDisplayImage" alt="okerekechiomaloveth" />
+            </div>
+            <div class="content-container">
+                <!-- SLACK NAME -->
+                <h1 data-testid="slackUserName">okerekechiomaloveth</h1>
+                <!-- CURRENT DAY OF THE WEEK -->
+                <p data-testid="currentDayOfTheWeek" id="dayOfWeek"></p>
+                <!-- TIME IN MILLISECONDS -->
+                <p data-testid="currentUTCTime" id="time">TIME</p>
+                <!-- TRACK -->
+                <p data-testid="myTrack">Frontend</p>
+                <!-- GITHUB URL-->
+                <a href="https://github.com/chiomaloveth/HNG_works" data-testid="githubURL">My Github</a
+          >
         </div>
-        <h3>
-            <p>
-                <div id="currentDayOfTheWeek">Today is:</div>
-            </p>
-            <p>
-                <div id="currentUTCTime">currentUTCTime:
-                </div>
-            </p>
-            <p></p>
-            <div id="myTrack">My Track: Frontend</div>
-            </p>
-    </div>
-    </h3><a href="https://github.com/chiomalovet/YourRepositoryName" data-testid="githubURL">GitHub Repository</a>
-
-    <script>
-        // Create an array of weekday names
-        const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-        // Get the current date and extract the day of the week (0 to 6)
-        const currentDayIndex = new Date().getDay();
-
-        // Get the day name using the currentDayIndex
-        const currentDay = daysOfWeek[currentDayIndex];
-
-        // Update the placeholder with the current day
-        document.querySelector('[id="currentDayOfTheWeek"]').textContent += currentDay;
-
-        function formatTime(date) {
-            const hours = String(date.getUTCHours()).padStart(2, '0');
-            const minutes = String(date.getUTCMinutes()).padStart(2, '0');
-            const seconds = String(date.getUTCSeconds()).padStart(2, '0');
-            return `${hours}:${minutes}:${seconds}`;
-        }
-        const currentUTC = new Date().toUTCString();
-        document.querySelector('[id="currentUTCTime"]').textContent += formatTime(new Date(currentUTC));
-    </script>
-</body>
-
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
 </html>
